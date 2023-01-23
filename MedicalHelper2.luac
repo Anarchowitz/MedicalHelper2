@@ -1,7 +1,7 @@
 script_name("MedicalHelper")
 script_authors("Hatiko (Remade by Hiroto)")
 script_description("Script for the Ministries of Health")
-script_version("2.6")
+script_version("2.538")
 script_properties("alpha build")
 setver = 1
  
@@ -4873,7 +4873,7 @@ end
 function funCMD.update()
 	sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Производится скачивание новой версии скрипта...", 0xEE4848)
 	local dir = dirml.."/MedicalHelper.lua"
-	local url = "https://github.com/TheMrThor/MedicalHelper/blob/master/MedicalHelpe1[]r.lua?raw=true"
+	local url = "https://raw.githubusercontent.com/Anarchowitz/MedicalHelper2/master/MedicalHelper2.lua"
 	--local url = "https://drive.google.com/uc?export=download&id=1gph2P6bWI1NZRW6TTdtXsmJtwpIX8JaC"
 	downloadUrlToFile(url, dir, function(id, status, p1, p2)
 		if status == dlstatus.STATUSEX_ENDDOWNLOAD then
@@ -4929,7 +4929,7 @@ local erTx =
 				addOneOffSound(0, 0, 0, 1058)
 				sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Произошла ошибка при скачивании обновления. Похоже, скачиванию что-то мешает.", 0xEE4848)
 				sampShowDialog(2001, "{FF0000}Ошибка обновления", erTx, "Закрыть", "", 0)
-				setClipboardText("https://github.com/TheMrThor/MedicalHelper/blob/master/MedicalHelperхзхъ?raw=true")
+				setClipboardText("https://raw.githubusercontent.com/Anarchowitz/MedicalHelper2/master/MedicalHelper2.lua")
 				updWin.v = false
 			end
 		end
