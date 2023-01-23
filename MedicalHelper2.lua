@@ -4929,7 +4929,7 @@ local erTx =
 				addOneOffSound(0, 0, 0, 1058)
 				sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Произошла ошибка при скачивании обновления. Похоже, скачиванию что-то мешает.", 0xEE4848)
 				sampShowDialog(2001, "{FF0000}Ошибка обновления", erTx, "Закрыть", "", 0)
-				setClipboardText("https://github.com/TheMrThor/MedicalHelper/blob/master/MedicalHelperхзхъ?raw=true")
+				setClipboardText("https://raw.githubusercontent.com/Anarchowitz/MedicalHelper2/master/MedicalHelper2.lua")
 				updWin.v = false
 			end
 		end
@@ -4946,7 +4946,7 @@ end
 function funCMD.updateCheck()
 	sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Проверяем наличие обновлений...", 0xEE4848)
 		local dir = dirml.."/MedicalHelper/files/update.med"
-		local url = "https://raw.githubusercontent.com/TheMrThor/MedicalHelper/master/update.med"
+		local url = "https://raw.githubusercontent.com/Anarchowitz/MedicalHelper2/master/update.med"
 		downloadUrlToFile(url, dir, function(id, status, p1, p2)
 			if status == dlstatus.STATUS_ENDDOWNLOADDATA then
 				lua_thread.create(function()
