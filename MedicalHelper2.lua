@@ -1854,7 +1854,7 @@ function imgui.OnDrawFrame()
 					imgui.Bullet(); imgui.SameLine()
 					imgui.TextColoredRGB("{FFB700}Вкладка \"Настройки\"")
 					imgui.TextWrapped(u8"\tБазовые настройки, которые требуется выставить перед началом работы, самые главные которые из них \"Основная информация\".")
-					imgui.TextWrapped(u8"\tЦеновая политика актуальна для сервера Holiday, если у Вас сервер другой, пожалуйста измените значения.")
+					imgui.TextWrapped(u8"\tЦеновая политика актуальна для сервера Saint Rose, если у Вас сервер другой, пожалуйста измените значения.")
 					--
 					imgui.Bullet(); imgui.SameLine()
 					imgui.TextColoredRGB("{FFB700}Вкладка \"Шпоры\"")
@@ -1892,7 +1892,7 @@ function imgui.OnDrawFrame()
 					imgui.SetCursorPosX(280)
 					imgui.Text(u8"Medical Helper")
 					imgui.Spacing()
-					imgui.TextWrapped(u8"\tСкрипт был разработан для проекта Ariona Role Play с поддержкой работы на сервере Holiday для облегчения работы сотрудникам больниц. Благодаря этому приложению Вы получите полный комплекс автоматизации многих действий и наслаждение от пользования.\nОбновления выходят по мере добавления нововведений и исправлений ошибок.")
+					imgui.TextWrapped(u8"\tСкрипт был разработан для проекта Ariona Role Play с поддержкой работы на сервере Saint Rose для облегчения работы сотрудникам больниц. Благодаря этому приложению Вы получите полный комплекс автоматизации многих действий и наслаждение от пользования.\nОбновления выходят по мере добавления нововведений и исправлений ошибок.")
 					imgui.Dummy(imgui.ImVec2(0, 10))
 					imgui.Bullet()
 					imgui.TextColoredRGB("Разработчик - {FFB700}Kevin Hatiko")
@@ -1980,7 +1980,7 @@ function imgui.OnDrawFrame()
 					imgui.SetTooltip(u8"Кликните, чтобы открыть ссылку.")
 				end
 				if imgui.IsItemClicked(0) then
-					print(shell32.ShellExecuteA(nil, 'open', 'https://forum.arizona-rp.com/threads/5454875/', nil, nil, 1))
+					print(shell32.ShellExecuteA(nil, 'open', 'http://forum.arizona-rp.com/index.php?threads/saint-rose-Наша-группа-vk-Вконтакте-и-discord.373395/', nil, nil, 1))
 				end
 				imgui.TextColoredRGB("Для этого перейдите по выше приведённой ссылке, где Вы сможете открыть ссылку на канал \nсервера. После перехода Вас перебросит на программу, если Вы её скачивали, где добавится \nсоотвествующий канал. Так как Вы являетесь новечком на канале, придётся подождать 10 минут \n{FAA158}перед тем, как сможете что либо писать.")   
 				imgui.Bullet()
@@ -4873,7 +4873,7 @@ end
 function funCMD.update()
 	sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Производится скачивание новой версии скрипта...", 0xEE4848)
 	local dir = dirml.."/MedicalHelper.lua"
-	local url = "https://github.com/TheMrThor/MedicalHelper/blob/master/MedicalHelpe1[]r.lua?raw=true"
+	local url = "https://raw.githubusercontent.com/Anarchowitz/MedicalHelper2/master/MedicalHelper2.lua"
 	--local url = "https://drive.google.com/uc?export=download&id=1gph2P6bWI1NZRW6TTdtXsmJtwpIX8JaC"
 	downloadUrlToFile(url, dir, function(id, status, p1, p2)
 		if status == dlstatus.STATUSEX_ENDDOWNLOAD then
@@ -4929,7 +4929,7 @@ local erTx =
 				addOneOffSound(0, 0, 0, 1058)
 				sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Произошла ошибка при скачивании обновления. Похоже, скачиванию что-то мешает.", 0xEE4848)
 				sampShowDialog(2001, "{FF0000}Ошибка обновления", erTx, "Закрыть", "", 0)
-				setClipboardText("https://github.com/Anarchowitz/MedicalHelper2/blob/master/MedicalHelper2.luac")
+				setClipboardText("https://github.com/TheMrThor/MedicalHelper/blob/master/MedicalHelperхзхъ?raw=true")
 				updWin.v = false
 			end
 		end
