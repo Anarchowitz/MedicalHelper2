@@ -1,2 +1,4 @@
 # MedicalHelper2
-Любительский вариант кода от Hatiko Scripts, 90% кода было позаимствовано. Релиз не для продаж.
+Скрипт был сделан на основе Medical Helper'a  от Hatiko Scripts.
+Всё отыгровки адаптированы под сервер Arizona [Holiday]
+
