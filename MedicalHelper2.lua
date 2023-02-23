@@ -1,7 +1,7 @@
 	script_name("MedicalHelper")
 	script_authors("Anarch (Fork by Hatiko)")
 	script_description("Script for the Ministries of Health")
-	script_version("2.6.1")
+	script_version("2.6.1.2")
 	script_properties("alpha build")
 	setver = 1
 	 
