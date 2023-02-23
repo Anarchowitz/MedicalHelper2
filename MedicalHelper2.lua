@@ -2,7 +2,7 @@
 	script_authors("Anarch (Fork by Hatiko)")
 	script_description("Script for the Ministries of Health")
 	script_version("2.6.1.2")
-	script_properties("alpha build")
+	script_properties("Stable version")
 	setver = 1
 	 
 	require "lib.sampfuncs"
