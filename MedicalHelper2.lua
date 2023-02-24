@@ -210,13 +210,13 @@
 	local chgName = {}
 	chgName.inp = imgui.ImBuffer(100)
 	chgName.org = {u8"Больница ЛС", u8"Больница СФ", u8"Больница ЛВ", u8"Больница Джефферсон"}
-	chgName.rank = {u8"Интерн", u8"2", u8"Лечащий Врач", u8"Нарколог", u8"Окулист", u8"Хирург", u8"Психолог", u8"Завед. отделением", u8"Зам.Гл.Врача", u8"Глав.Врач", u8"Министр Здравоохранения"}
+	chgName.rank = {u8"Интерн", u8"Участковый врач", u8"Лечащий Врач", u8"Нарколог", u8"Окулист", u8"Хирург", u8"Психолог", u8"Завед. отделением", u8"Зам.Гл.Врача", u8"Глав.Врач", u8"Министр Здравоохранения"}
 
 	local list_org_BL = {"Больница LS", "Больница SF", "Больница LV", "Больница Jefferson"} 
 	local list_org	= {u8"Больница ЛС", u8"Больница СФ", u8"Больница ЛВ", u8"Больница Джефферсон"}
 	local list_org_en = {"Los-Santos Medical Center","San-Fierro Medical Center","Las-Venturas Medical Center","Jefferson Medical Center"}
 	local list_sex	= {fa.ICON_MALE .. u8" Мужской", fa.ICON_FEMALE .. u8" Женский"} --ICON_MALE ICON_FEMALE 
-	local list_rank	= {u8"Интерн", u8"Участковый врач", u8"Терапевт", u8"Нарколог", u8"Окулист", u8"Хирург", u8"Психолог", u8"Завед. отделением", u8"Зам.Гл.Врача", u8"Глав.Врач", u8"Министр Здравоохранения"}
+	local list_rank	= {u8"Интерн", u8"Участковый врач", u8"Лечащий Врач", u8"Нарколог", u8"Окулист", u8"Хирург", u8"Психолог", u8"Завед. отделением", u8"Зам.Гл.Врача", u8"Глав.Врач", u8"Министр Здравоохранения"}
 	--chat
 	local cb_chat1	= imgui.ImBool(false)
 	local cb_chat2	= imgui.ImBool(false)
@@ -1923,16 +1923,15 @@
 							imgui.SetCursorPosX(20)
 							imgui.Text(fa.ICON_BUG)
 							imgui.SameLine()
-							imgui.TextColoredRGB("Нашли баг или ошибку, или же хотите видеть что-то новое, напишите автору в тг"); imgui.SameLine(); imgui.Text(fa.ICON_ARROW_DOWN)
+							imgui.TextColoredRGB("Нашли баг или ошибку, или же хотите видеть что-то новое, напишите автору в тг/дс/вк"); imgui.SameLine(); imgui.Text(fa.ICON_ARROW_DOWN)
 							imgui.SetCursorPosX(20)
 							imgui.Text(fa.ICON_LINK)
 							imgui.SameLine()
-							imgui.TextColoredRGB("Для связи: TG: {74BAF4}@ni33er или Discord - {74BAF4}anarch#5727")
+							imgui.TextColoredRGB("Для связи DS/VK : Discord - AnarchowitZ#0870,{74BAF4} VK CLICK")
 								if imgui.IsItemHovered() then imgui.SetTooltip(u8"Кликните ЛКМ, чтобы скопировать, или ПКМ, чтобы открыть в браузере")  end
-								if imgui.IsItemClicked(0) then setClipboardText("https://web.telegram.org/z/#1177915114") end
-								if imgui.IsItemClicked(1) then print(shell32.ShellExecuteA(nil, 'open', 'https://web.telegram.org/z/#1177915114', nil, nil, 1)) end
+								if imgui.IsItemClicked(0) then setClipboardText("https://vk.com/anarchscripts") end
+								if imgui.IsItemClicked(1) then print(shell32.ShellExecuteA(nil, 'open', 'https://vk.com/anarchscripts', nil, nil, 1)) end
 								imgui.SameLine()
-								imgui.TextColoredRGB("{68E15D}(наведи){FFFFFF}  Нажав в группе на {74BAF4}\"Написать сообщение\"")
 							imgui.Spacing()
 							imgui.SetCursorPosX(20)
 							imgui.TextColored(imgui.ImColor(18, 220, 0, 200):GetVec4(), fa.ICON_MONEY)
@@ -1969,7 +1968,7 @@
 					end
 					imgui.Dummy(imgui.ImVec2(0, 5))
 					imgui.SetCursorPosX(145)
-					imgui.TextColoredRGB("Небольшой гайд по пользованию голосовой программы {3EB2FF}Discrod [НЕАКТУАЛЬНО МБ КОГДА-ТО ОБНОВЛЮ!]")
+					imgui.TextColoredRGB("Небольшой гайд по пользованию голосовой программы {3EB2FF}Discrod")
 					imgui.Dummy(imgui.ImVec2(0, 20))
 					imgui.SetCursorPosX(10)
 					imgui.TextColoredRGB("{3EB2FF}Discord{FFFFFF} - это очень удобная программа, предназначенная для передачи, как голосовых, так и\n текстовых сообщений другим пользователям. В наше время, данная программа является самой \nпродвинутой и популярной с другими схожими ей приложениями.")
@@ -1997,27 +1996,22 @@
 						imgui.SetTooltip(u8"Кликните, чтобы открыть ссылку.")
 					end
 					if imgui.IsItemClicked(0) then
-						print(shell32.ShellExecuteA(nil, 'open', 'https://forum.arizona-rp.com/threads/5454875/', nil, nil, 1))
+						print(shell32.ShellExecuteA(nil, 'open', 'https://forum.arizona-rp.com/threads/1934883/', nil, nil, 1))
 					end
-					imgui.TextColoredRGB("Для этого перейдите по выше приведённой ссылке, где Вы сможете открыть ссылку на канал \nсервера. После перехода Вас перебросит на программу, если Вы её скачивали, где добавится \nсоотвествующий канал. Так как Вы являетесь новечком на канале, придётся подождать 10 минут \n{FAA158}перед тем, как сможете что либо писать.")   
+					imgui.TextColoredRGB("Для этого перейдите по выше приведённой ссылке, где вы попадете\n в дискорд сервер Glendale`а. После перехода Вас перебросит на программу, если Вы её скачивали\n где добавится соотвествующий дискорд сервер.")   
 					imgui.Bullet()
-					imgui.TextColoredRGB("{FAB428}Третье.\n\t{FFFFFF}По истечению 10 минут Вы сможете писать в доступные каналы. Так как Вы являетесь \nсотрудником Больницы, необходимо запросить роль для доступа к голосовому каналу. \nДля этого требуется:")
+					imgui.TextColoredRGB("{FAB428}Третье.\n\t{FFFFFF}Так как Вы являетесь \nсотрудником Больницы, необходимо запросить роль для полноценной работы. \nДля этого требуется:")
 
-					imgui.TextColoredRGB("\t1. Нажмите на текстовый канал, указанный левой красной стрелкой. \n\t2. Узнайте, если ли сейчас в игре сотрудник от 9 ранга и выше. Посмотреть можно, введя \n\t\tкоманду /mb \n\t3. Если в игре есть сотрудник(и) от 9 ранга, то нужно в дискорде прописать команду.\n\t\t{F24545}Для Больницы ЛС - /lsmc123 \n\t\t{F24545}Для Больницы СФ - /sfmc123\n\t\t{F24545}Для Больницы ЛВ - /lvmc123\n{FFFFFF}После ввода команды должно получиться так(Показано правой стрелкой):")
+					imgui.TextColoredRGB("\t1. Нажмите на текстовый канал, указанный левой красной стрелкой. \n\t2. Узнайте, если ли сейчас в игре сотрудник от 9 ранга и выше. Посмотреть можно, введя \n\t\tкоманду /mb \n\t3. Если в игре есть сотрудник(и) от 9 ранга, то нужно в дискорде надо зайти в канал\n #для-запроса-ролей.")
 					if disRole then
 						imgui.SetCursorPosX(25)
 						imgui.Image(disRole, imgui.ImVec2(586, 340))
 					end
-					imgui.TextColoredRGB("\t4. Попросите в игре сотрудника от 9 ранга и выше, чтобы выдали роль Вам, написав, что Вы\n запросили уже.")
+					imgui.TextColoredRGB("\t4. Нажмите на 'Выбор запрашиваемой роли', далее в списке найдите свою организацию.")
 					imgui.TextColoredRGB("После выдачи роли Вам откроются новые каналы. Для этого слева листаете в самый низ. \nНа скриншоте видно, что имеется Текстовый канал, где можно общаться между сотрудниками, \nтакже голосовой, где Вы сможете общаться голосом, но советуем установить активацию микрофона\n по клавише.")
 					if disMed then
 						imgui.SetCursorPosX(25)
 						imgui.Image(disMed, imgui.ImVec2(581, 301))
-					end
-					imgui.TextColoredRGB("\t5. Измените себе никнейм. Для этого в канале кликните по себе ПКМ (праквой кнопкой мыши). \nПосле чего выберете пункт {F2D045}'Изменить никнейм'. {FFFFFF}Ник делаем по форме, к примеру Вы сотрудник \nбольницы ЛВ, делаем ник: {B3F637}[LVMC][Ваш ранг] Ник Нейм")
-					if disNick then
-						imgui.SetCursorPosX(25)
-						imgui.Image(disNick, imgui.ImVec2(354, 204))
 					end
 					imgui.EndChild()
 				end
