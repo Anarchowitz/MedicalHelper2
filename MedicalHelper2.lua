@@ -209,11 +209,11 @@
 	local num_rank	= imgui.ImInt(0)
 	local chgName = {}
 	chgName.inp = imgui.ImBuffer(100)
-	chgName.org = {u8"Больница ЛС", u8"Больница СФ", u8"Больница ЛВ"}
+	chgName.org = {u8"Больница ЛС", u8"Больница СФ", u8"Больница ЛВ", u8"Больница Джефферсон"}
 	chgName.rank = {u8"Интерн", u8"2", u8"Лечащий Врач", u8"Нарколог", u8"Окулист", u8"Хирург", u8"Психолог", u8"Завед. отделением", u8"Зам.Гл.Врача", u8"Глав.Врач", u8"Министр Здравоохранения"}
 
 	local list_org_BL = {"Больница LS", "Больница SF", "Больница LV", "Больница Jefferson"} 
-	local list_org	= {u8"Больница ЛС", u8"Больница СФ", u8"Больница ЛВ", u8"Больница Jefferson"}
+	local list_org	= {u8"Больница ЛС", u8"Больница СФ", u8"Больница ЛВ", u8"Больница Джефферсон"}
 	local list_org_en = {"Los-Santos Medical Center","San-Fierro Medical Center","Las-Venturas Medical Center","Jefferson Medical Center"}
 	local list_sex	= {fa.ICON_MALE .. u8" Мужской", fa.ICON_FEMALE .. u8" Женский"} --ICON_MALE ICON_FEMALE 
 	local list_rank	= {u8"Интерн", u8"Участковый врач", u8"Терапевт", u8"Нарколог", u8"Окулист", u8"Хирург", u8"Психолог", u8"Завед. отделением", u8"Зам.Гл.Врача", u8"Глав.Врач", u8"Министр Здравоохранения"}
