@@ -587,7 +587,7 @@
 			[7] = {
 			cmd = "/vac",
 			key = {},
-			desc = "Сеанс вакцинации [BETA].",
+			desc = "Сеанс вакцинации.",
 			rank = 3,
 			rb = false
 		},
@@ -1149,7 +1149,7 @@
 			sampRegisterChatCommand("mh", function() mainWin.v = not mainWin.v end)
 			sampRegisterChatCommand("reload", function() scr:reload() end)
 			sampRegisterChatCommand("hl", funCMD.lec)
-			sampRegisterChatCommand("vac", funCMD.vac)
+			sampRegisterChatCommand("vac", funCMD.vacin)
 			sampRegisterChatCommand("antib", funCMD.antib)
 			sampRegisterChatCommand("hlp", funCMD.hlp)
 			sampRegisterChatCommand("strax", funCMD.strax)
@@ -1174,16 +1174,16 @@
 			sampRegisterChatCommand("ts", funCMD.time)
 			sampRegisterChatCommand("exp", funCMD.expel)
 			sampRegisterChatCommand("mh-delete", funCMD.del)
-			sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Скрипт инициализирован.", 0xEE4848)
+			sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper 2{FFFFFF}]: Скрипт загружен.", 0xEE4848)
 			repeat wait(100) until sampIsLocalPlayerSpawned()
 			_, myid = sampGetPlayerIdByCharHandle(PLAYER_PED)
 			myNick = sampGetPlayerNickname(myid)
 			
-			sampAddChatMessage(string.format("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Приветствую, %s. Для активации главного меню пропишите в чат {22E9E3}/mh.", sampGetPlayerNickname(myid):gsub("_"," ")), 0xEE4848)
+			sampAddChatMessage(string.format("{FFFFFF}[{EE4848}MedicalHelper 2{FFFFFF}]: Приветствую, %s. Для активации главного меню пропишите в чат {22E9E3}/mh.", sampGetPlayerNickname(myid):gsub("_"," ")), 0xEE4848)
 			wait(200)
 			if buf_nick.v == "" then 
-				sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Похоже у тебя не настроена основная информация. ", 0xEE4848)
-				sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Зайди в главном меню в раздел \"Настройки\" и настрой себе всё по \"фэн-шую\".", 0xEE4848)
+				sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper 2{FFFFFF}]: Похоже у тебя не настроена основная информация. ", 0xEE4848)
+				sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper 2{FFFFFF}]: Зайди в главном меню в раздел \"Настройки\" и настрой себе всё по \"фэн-шую\".", 0xEE4848)
 			end
 	  while true do
 		wait(0)
@@ -1950,7 +1950,7 @@
 								sampAddChatMessage("", 0xEE4848)
 								sampAddChatMessage("", 0xEE4848)
 								sampAddChatMessage("", 0xEE4848)
-								sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: Внимание! Подтвердите удаление командой {77DF63}/mh-delete.", 0xEE4848)
+								sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper 2{FFFFFF}]: Внимание! Подтвердите удаление командой {77DF63}/mh-delete.", 0xEE4848)
 								mainWin.v = false
 							--	sampShowDialog(1002, "{E94C4C}MedicalHelper | {8EE162}Удаление", remove, "Принял", "")
 							end
@@ -3501,7 +3501,7 @@
 						funCMD.post()
 					elseif k == 7 then
 						if resTarg then
-							funCMD.vac(tostring(targID))
+							funCMD.vacin(tostring(targID))
 						else
 							sampSetChatInputEnabled(true)
 							sampSetChatInputText("/vac ")
@@ -3610,7 +3610,7 @@
 							funCMD.hlp(tostring(targID))
 						else
 							sampSetChatInputEnabled(true)
-							sampSetChatInputText("/hl ")
+							sampSetChatInputText("/heal ")
 						end
 						elseif k == 25 then
 						 if resTarg then
@@ -4064,7 +4064,7 @@
 						end
 					sampSendChat(chsex("/me нырнув правой рукой в карман, вытянул оттуда блокнот и ручку", "/me нырнув правой рукой в карман, вытянула оттуда блокнот и ручку"))
 					wait(2000)
-					sampSendChat(chsex("/todo Хорошо, понял, ничего страшного*записывая в блокнот, все сказанное пациентом", "/todo Хорошо, поняла, ничего страшного*записывая в блокнот, все сказанное пациентом"))
+					sampSendChat("/todo Так-так, хорошо, не волнуйтесь*записав все сказанное человеком напротив")
 					wait(2000)
 					sampSendChat("/me движением правой руки открыл мед.кейс")
 					wait(2000)
@@ -4072,13 +4072,11 @@
 					wait(2000)
 					sampSendChat("/do Лекарство в правой руке.")
 					wait(2000)
-					sampSendChat("/todo Вот, держите*передавая лекарство человеку напротив")
-					wait(2000)
 					sampSendChat("/me аккуратным движением руки передал лекарство пациенту")
 					wait(2000)
 					sampSendChat("Принимайте эти таблетки,и через некоторое время вам станет лучше")
 					wait(100)
-					sampSendChat("/heal "..id)
+					sampSendChat("/heal "..id.." 5000")
 				elseif isCharInModel(PLAYER_PED, 416) then
 					sampSendChat("Здравствуйте, что с Вами случилось?")
 					wait(2000)
@@ -4193,7 +4191,7 @@
 					wait(2000)
 					sampSendChat("/todo Удачного вам дня,не болейте*обращаясь к пациенту.")
 					wait(2000)
-					sampAddChatMessage("/antibiotik [id] [Кол-во]")
+					sampAddChatMessage("/antibiotik [id] [Кол-во]", 0xEE4848)
 				end
 			end)
 		else
@@ -4550,7 +4548,7 @@
 			end
 		end
 	end
-	function funCMD.vac(id)
+	function funCMD.vacin(id)
 		if thread:status() ~= "dead" then
 			sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper{FFFFFF}]: В данный момент проигрывается отыгровка.", 0xEE4848)
 			return
@@ -4564,7 +4562,7 @@
 		if id:find("%d+") then
 			thread = lua_thread.create(function()
 				if not isCharInModel(PLAYER_PED, 416) then
-					sampSendChat(string.format("Здраствуйте.Что бы успешно вакцинироваться нужно 2 укола. 1 укол стоит 75.000$ ", u8:decode(buf_nick.v)))
+					sampSendChat(string.format("Для успешной вакцинации нужно 2 инъекции. 1 инъекция стоит 3OO.OOO$ ", u8:decode(buf_nick.v)))
                                         wait(2000)
                                         sampSendChat("Вы согласны?")
 					wait(1000)
@@ -4597,17 +4595,25 @@
 					sampSendChat("/todo Сейчас не дёргайтесь, будет немного не приятно*смотря на область укола")
 					wait(2000)
 					sampSendChat("/me аккуратным движением руки ввёл шприц в руку, затем вакцину")
-					wait(2000)
+					wait(1700)
 					sampSendChat("/todo Вот и всё, держите ватку*передавая ватку человеку")
 					wait(2000)
 					sampSendChat("/me выкинув шприц в урну")
 					wait(2000)
 					sampSendChat("/todo Держите её в месте укола 2 минуты*передавая ватку человеку на против")
-					sampAddChatMessage(" WARN - {EE4848} Стойте 2 минуты около пациента. Отыгровка продолжиться автоматически!", 0xEE4848)
-					sampSendChat("/vaccine "..id)
-					wait(125000)
-					sampSendChat("/vaccine "..id)
 					wait(2000)
+					sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper 2{FFFFFF}]: Ожидайте около пациента отыгровка сама продолжиться через 2 минуты.", 0xEE4848)
+					wait(1000)
+					sampAddChatMessage("{FFFFFF}[{EE4848}MedicalHelper 2{FFFFFF}]: Нажмите на  {23E64A}Enter{FFFFFF} для продолжения или {23E64A}Page Down{FFFFFF}, чтобы закончить диалог.", 0xEE4848)
+						addOneOffSound(0, 0, 0, 1058)
+						local len = renderGetFontDrawTextLength(font, "{FFFFFF}[{67E56F}Enter{FFFFFF}] - Продолжить")
+						while true do
+						wait(0)
+							renderFontDrawText(font, "Вакцинация: {8ABCFA}Вторая инъекция\n{FFFFFF}[{67E56F}Enter{FFFFFF}] - Продолжить", sx-len-10, sy-50, 0xFFFFFFFF)
+							if isKeyJustPressed(VK_RETURN) and not sampIsChatInputActive() and not sampIsDialogActive() then break end
+						end
+					wait(100)
+					sampSendChat("/vaccine "..id)
 					sampSendChat("Могу Вас поздравить с успешным вакцинированием.")
 					wait(2000)
 					sampSendChat("Если будут жалобы на самочувствие - сразу же обратитесь к нам.")			
@@ -4876,6 +4882,8 @@
 					sampSendChat("Здравствуйте, сейчас я проведу для Вас небольшое мед.обследование.")
 					wait(2000)
 					sampSendChat("Пожалуйста, предоставьте Вашу мед.карту.")
+					wait(2000)
+					sampSendChat("/b С рп отыгровками /me,/do")
 					wait(1000)
 						addOneOffSound(0, 0, 0, 1058)
 						while true do
@@ -4967,7 +4975,7 @@
 				local pxp, pyp, pzp = getCharCoordinates(handle)
 				local distance = getDistanceBetweenCoords2d(px, py, pxp, pyp)
 				if distance <= 4 then
-					sampSendChat("/heal "..i)
+					sampSendChat("/heal "..i.." 5000")
 				end
 			end
 		end
@@ -4984,7 +4992,7 @@
 	end
 	function funCMD.hme()
 		local _, plId = sampGetPlayerIdByCharHandle(PLAYER_PED)
-		sampSendChat("/heal "..plId)
+		sampSendChat("/heal "..plId.." 5000")
 	end
 	function funCMD.memb()
 		sampSendChat("/members")
